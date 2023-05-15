@@ -1,5 +1,4 @@
-
-- name: Setup MongoDB Repo
+- name: Setup Mongodb YUM repo file
   ansible.builtin.copy:
     src: mongodb.repo
     dest: /etc/yum.repos.d/mongo.repo
@@ -15,7 +14,7 @@
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
-- name: Start mongodb service
+- name: Start Mongodb
   ansible.builtin.systemd:
     name: mongod
     state: started

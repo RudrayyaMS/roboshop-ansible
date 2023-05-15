@@ -8,8 +8,8 @@
 - name: Install Rabbitmq & Erlang
   ansible.builtin.yum:            # yum module supports lost of packages
     name:
-      - rabbitmq-server
-      - erlang
+    - rabbitmq-server
+    - erlang
     status: installed
 
 - name: Start RabbitMQ Service

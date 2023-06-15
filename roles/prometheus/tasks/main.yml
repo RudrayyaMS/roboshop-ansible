@@ -1,0 +1,4 @@
+- name: prometheus server
+  ansible.builtin.import_tasks:
+    file: server.yml                 #loading server.yml file
+  when: prometheus_server

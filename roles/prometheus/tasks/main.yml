@@ -2,3 +2,8 @@
   ansible.builtin.import_tasks:
     file: server.yml                 #loading servere
   when: prometheus_server
+
+- name: node exporter
+  ansible.builtin.import_tasks:
+    file: exporter.yml                 #loading servere
+  when: node_exporter

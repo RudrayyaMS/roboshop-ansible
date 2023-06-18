@@ -9,9 +9,10 @@
     dest: /opt/prometheus/{{ item }}
   loop: "{{ alert_files }}"      # declared in vars folder
 
-
-
 - name: Restart prometheus
   ansible.builtin.systemd:
     name: prometheus
     state: restarted
+
+- name: Check Prometheus is Started
+  ansible.builtin.shell: netstat -lntp | grep 9090
